@@ -1,4 +1,4 @@
-package adventofcode.sonarsweep;
+package adventofcode.day1.sonarsweep;
 
 import org.junit.jupiter.api.Test;
 
@@ -11,36 +11,36 @@ class PartTwoTest {
 
     @Test
     void emptyInput_returns0() {
-        List<Integer> input = List.of();
+        List<String> input = List.of();
         var result = subject.solve(input);
-        assertThat(result).isEqualTo(0);
+        assertThat(result).isEqualTo("0");
     }
 
     @Test
     void singleInput_returns0() {
-        List<Integer> input = List.of(100);
+        List<String> input = List.of("100");
         var result = subject.solve(input);
-        assertThat(result).isEqualTo(0);
+        assertThat(result).isEqualTo("0");
     }
 
     @Test
     void fourInputs_ifSecondSlidingWindowIsLessThanFirst_returns0() {
-        List<Integer> input = List.of(100, 100,100,99);
+        List<String> input = List.of("100", "100","100","99");
         var result = subject.solve(input);
-        assertThat(result).isEqualTo(0);
+        assertThat(result).isEqualTo("0");
     }
 
     @Test
     void fourInputs_ifSecondSlidingWindowIsGreaterThanFirst_returns1() {
-        List<Integer> input = List.of(100, 100,100,101);
+        List<String> input = List.of("100", "100","100","101");
         var result = subject.solve(input);
-        assertThat(result).isEqualTo(1);
+        assertThat(result).isEqualTo("1");
     }
 
     @Test
     void sampleInput() {
-        List<Integer> input = List.of(199, 200, 208, 210, 200, 207, 240, 269, 260, 263);
+        List<String> input = List.of("199", "200", "208", "210", "200", "207", "240", "269", "260", "263");
         var result = subject.solve(input);
-        assertThat(result).isEqualTo(5);
+        assertThat(result).isEqualTo("5");
     }
 }
