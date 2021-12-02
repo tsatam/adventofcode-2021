@@ -4,4 +4,8 @@
 # Ignore Gradle build output directory
 build
 
+# IntelliJ project folder
 .idea
+
+# Input files
+inputs

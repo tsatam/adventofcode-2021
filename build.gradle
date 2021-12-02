@@ -7,6 +7,7 @@ repositories {
 }
 
 dependencies {
+    testImplementation("org.assertj:assertj-core:3.21.0")
 }
 
 testing {
@@ -19,4 +20,8 @@ testing {
 
 application {
     mainClass = 'adventofcode.App'
+}
+
+run {
+    standardInput = System.in
 }
