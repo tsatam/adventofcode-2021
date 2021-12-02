@@ -1,11 +1,11 @@
 package adventofcode;
 
-import adventofcode.sonarsweep.Solver;
+import adventofcode.sonarsweep.PartOne;
+import adventofcode.sonarsweep.PartTwo;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class App {
     public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class App {
                 .map(Integer::parseInt)
                 .toList();
 
-        var output = new Solver().solve(input);
+        var output = new PartTwo().solve(input);
 
         System.out.println(output);
     }
