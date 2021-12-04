@@ -1,7 +1,6 @@
 package adventofcode;
 
-import adventofcode.day3.binarydiagnostic.PartOne;
-import adventofcode.day3.binarydiagnostic.PartTwo;
+import adventofcode.day4.giantsquid.PartTwo;
 
 import java.util.ArrayList;
 import java.util.List;
