@@ -1,4 +1,4 @@
-package adventofcode.day4.giantsquid;
+package adventofcode.day4;
 
 import adventofcode.Solver;
 import org.junit.jupiter.api.Test;
@@ -7,8 +7,8 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class PartTwoTest {
-    private final Solver subject = new PartTwo();
+class PartOneTest {
+    private final Solver subject = new GiantSquid.PartOne();
 
     @Test
     void emptyInput_returns0() {
@@ -77,9 +77,9 @@ class PartTwoTest {
     }
 
     @Test
-    void twoBoards_ifSecondBoardWinsFirst_returnsScoreOfFirstBoard() {
+    void twoBoards_ifSecondBoardWinsFirst_returnsScoreOfSecondBoard() {
         List<String> input = List.of(
-                "3,1",
+                "3",
                 "",
                 " 1  1  1  1  1",
                 " 2  2  2  2  2",
@@ -94,7 +94,7 @@ class PartTwoTest {
                 " 1  1  1  1  1"
         );
         var result = subject.solve(input);
-        assertThat(result).isEqualTo("40");
+        assertThat(result).isEqualTo("60");
     }
 
     @Test
@@ -121,6 +121,6 @@ class PartTwoTest {
                 " 2  0 12  3  7"
         );
         var result = subject.solve(input);
-        assertThat(result).isEqualTo("1924");
+        assertThat(result).isEqualTo("4512");
     }
 }

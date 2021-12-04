@@ -1,10 +1,10 @@
-package adventofcode.day4.giantsquid;
+package adventofcode.day4;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
 
-public class Parser {
+class Parser {
     public static int[] getDraws(List<String> input) {
         return Arrays.stream(input.get(0).split(",")).mapToInt(Integer::parseInt).toArray();
     }

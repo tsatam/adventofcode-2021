@@ -1,10 +1,10 @@
-package adventofcode.day4.giantsquid;
+package adventofcode.day4;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class Board {
-    private int[][] board;
+class Board {
+    private final int[][] board;
 
     public Board(int[][] board) {
         this.board = board;

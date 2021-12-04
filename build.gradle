@@ -6,6 +6,12 @@ repositories {
     mavenCentral()
 }
 
+java {
+    toolchain{
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
 dependencies {
     testImplementation("org.assertj:assertj-core:3.21.0")
 }
@@ -22,6 +28,19 @@ application {
     mainClass = 'adventofcode.App'
 }
 
-run {
-    standardInput = System.in
+def days = 1..25;
+def parts = 1..2;
+
+days.each {day ->
+    parts.each {part ->
+        tasks.register("aoc-${day.toString().padLeft(2, "0")}-${part}", JavaExec) {
+            group = "Advent of Code"
+            description = "Run the solution for Day ${day}, Part ${part}"
+            classpath = sourceSets.main.runtimeClasspath
+            mainClass = 'adventofcode.App'
+            args "${day}-${part}"
+            def inputFile = new File(projectDir, "inputs/day${day}.txt")
+            standardInput = inputFile.exists() ? inputFile.newInputStream() : System.in
+        }
+    }
 }

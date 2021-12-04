@@ -1,4 +1,4 @@
-package adventofcode.day1.sonarsweep;
+package adventofcode.day1;
 
 import org.junit.jupiter.api.Test;
 
@@ -6,8 +6,8 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class PartTwoTest {
-    private PartTwo subject = new PartTwo();
+class PartOneTest {
+    private final SonarSweep subject = new SonarSweep.PartOne();
 
     @Test
     void emptyInput_returns0() {
@@ -24,15 +24,15 @@ class PartTwoTest {
     }
 
     @Test
-    void fourInputs_ifSecondSlidingWindowIsLessThanFirst_returns0() {
-        List<String> input = List.of("100", "100","100","99");
+    void twoInputs_ifSecondIsLessThanFirst_returns0() {
+        List<String> input = List.of("100", "99");
         var result = subject.solve(input);
         assertThat(result).isEqualTo("0");
     }
 
     @Test
-    void fourInputs_ifSecondSlidingWindowIsGreaterThanFirst_returns1() {
-        List<String> input = List.of("100", "100","100","101");
+    void twoInputs_ifSecondIsGreaterThanFirst_returns1() {
+        List<String> input = List.of("100", "101");
         var result = subject.solve(input);
         assertThat(result).isEqualTo("1");
     }
@@ -41,6 +41,6 @@ class PartTwoTest {
     void sampleInput() {
         List<String> input = List.of("199", "200", "208", "210", "200", "207", "240", "269", "260", "263");
         var result = subject.solve(input);
-        assertThat(result).isEqualTo("5");
+        assertThat(result).isEqualTo("7");
     }
 }

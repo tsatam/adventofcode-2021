@@ -1,6 +1,6 @@
-package adventofcode.day2.dive;
+package adventofcode.day2;
 
-public record Command(Direction direction, int distance) {
+record Command(Direction direction, int distance) {
     public static Command fromInput(String input) {
         var split = input.split(" ");
         return new Command(Direction.valueOf(split[0]), Integer.parseInt(split[1]));
