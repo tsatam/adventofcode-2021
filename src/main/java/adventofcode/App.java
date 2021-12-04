@@ -1,7 +1,7 @@
 package adventofcode;
 
-import adventofcode.day2.dive.PartOne;
-import adventofcode.day2.dive.PartTwo;
+import adventofcode.day3.binarydiagnostic.PartOne;
+import adventofcode.day3.binarydiagnostic.PartTwo;
 
 import java.util.ArrayList;
 import java.util.List;
