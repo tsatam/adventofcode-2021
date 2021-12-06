@@ -5,6 +5,7 @@ import adventofcode.day2.Dive;
 import adventofcode.day3.BinaryDiagnostic;
 import adventofcode.day4.GiantSquid;
 import adventofcode.day5.HydrothermalVenture;
+import adventofcode.day6.LanternfishSolver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,9 @@ public class App {
             entry("4-1", GiantSquid.PartOne::new),
             entry("4-2", GiantSquid.PartTwo::new),
             entry("5-1", HydrothermalVenture.PartOne::new),
-            entry("5-2", HydrothermalVenture.PartTwo::new)
+            entry("5-2", HydrothermalVenture.PartTwo::new),
+            entry("6-1", LanternfishSolver.PartOne::new),
+            entry("6-2", LanternfishSolver.PartTwo::new)
     );
 
     public static void main(String[] args) {
