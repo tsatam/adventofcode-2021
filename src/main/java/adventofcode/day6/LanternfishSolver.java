@@ -4,54 +4,45 @@ import adventofcode.Solver;
 
 import java.math.BigInteger;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.IntStream;
 
 public abstract sealed class LanternfishSolver implements Solver {
     private static final int REPRODUCTION_TIME = 6;
     private static final int DEFAULT_TIMER = 8;
-    private static final Map<String, BigInteger> dp = new HashMap<>();
+
+    private final BigInteger[] fishAtDays = new BigInteger[DEFAULT_TIMER + 1];
+
+    public LanternfishSolver() {
+        Arrays.fill(fishAtDays, BigInteger.ZERO);
+    }
 
     @Override
     public String solve(List<String> input) {
-        if (input.isEmpty()) {
+        if(input.isEmpty()) {
             return "0";
         }
+        readInput(input.get(0));
 
-        return parseInput(input.get(0))
-                .mapToObj(timer -> calculateCount(timer, daysToSimulate()))
-                .reduce(BigInteger.ZERO, BigInteger::add)
-                .toString();
+        for(int day = 0; day < daysToSimulate(); day++) {
+            var fishAt0 = fishAtDays[0];
+
+            System.arraycopy(fishAtDays, 1, fishAtDays, 0, fishAtDays.length);
+
+            fishAtDays[REPRODUCTION_TIME] = fishAtDays[REPRODUCTION_TIME].add(fishAt0);
+            fishAtDays[DEFAULT_TIMER] = fishAt0;
+        }
+        return Arrays.stream(fishAtDays)
+            .reduce(BigInteger.ZERO, BigInteger::add)
+            .toString();
+    }
+
+    private void readInput(String input) {
+        Arrays.stream(input.split(","))
+            .mapToInt(Integer::parseInt)
+            .forEach(timer -> fishAtDays[timer] = fishAtDays[timer].add(BigInteger.ONE));
     }
 
     protected abstract int daysToSimulate();
-
-    private static IntStream parseInput(String input) {
-        return Arrays.stream(input.split(","))
-                .mapToInt(Integer::parseInt);
-    }
-
-    private static BigInteger calculateCount(int timer, int days) {
-        if (days == 0) {
-            return BigInteger.ONE;
-        }
-        var key = "%d-%d".formatted(timer, days);
-        if (dp.containsKey(key)) {
-            return dp.get(key);
-        } else {
-            BigInteger result;
-            if (timer == 0) {
-                result = calculateCount(REPRODUCTION_TIME, days - 1)
-                        .add(calculateCount(DEFAULT_TIMER, days - 1));
-            } else {
-                result = calculateCount(timer - 1, days - 1);
-            }
-            dp.put(key, result);
-            return result;
-        }
-    }
 
     public static final class PartOne extends LanternfishSolver {
         @Override
@@ -61,12 +52,9 @@ public abstract sealed class LanternfishSolver implements Solver {
     }
 
     public static final class PartTwo extends LanternfishSolver {
-
         @Override
         protected int daysToSimulate() {
             return 256;
         }
     }
-
-
 }

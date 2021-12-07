@@ -18,13 +18,6 @@ class PartTwoTest {
     }
 
     @Test
-    void oneLanternFishWithTimerOf257_returns1() {
-        List<String> input = List.of("257");
-        var result = subject.solve(input);
-        assertThat(result).isEqualTo("1");
-    }
-
-    @Test
     void sampleInput() {
         List<String> input = List.of("3,4,3,1,2");
         var result = subject.solve(input);
