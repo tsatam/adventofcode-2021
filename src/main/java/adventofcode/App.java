@@ -6,6 +6,7 @@ import adventofcode.day3.BinaryDiagnostic;
 import adventofcode.day4.GiantSquid;
 import adventofcode.day5.HydrothermalVenture;
 import adventofcode.day6.LanternfishSolver;
+import adventofcode.day7.TheTreacheryOfWhales;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,22 +18,24 @@ import static java.util.Map.entry;
 
 public class App {
     private static final Map<String, Supplier<Solver>> solvers = Map.ofEntries(
-            entry("1-1", SonarSweep.PartOne::new),
-            entry("1-2", SonarSweep.PartTwo::new),
-            entry("2-1", Dive.PartOne::new),
-            entry("2-2", Dive.PartTwo::new),
-            entry("3-1", BinaryDiagnostic.PartOne::new),
-            entry("3-2", BinaryDiagnostic.PartTwo::new),
-            entry("4-1", GiantSquid.PartOne::new),
-            entry("4-2", GiantSquid.PartTwo::new),
-            entry("5-1", HydrothermalVenture.PartOne::new),
-            entry("5-2", HydrothermalVenture.PartTwo::new),
-            entry("6-1", LanternfishSolver.PartOne::new),
-            entry("6-2", LanternfishSolver.PartTwo::new)
+        entry("1-1", SonarSweep.PartOne::new),
+        entry("1-2", SonarSweep.PartTwo::new),
+        entry("2-1", Dive.PartOne::new),
+        entry("2-2", Dive.PartTwo::new),
+        entry("3-1", BinaryDiagnostic.PartOne::new),
+        entry("3-2", BinaryDiagnostic.PartTwo::new),
+        entry("4-1", GiantSquid.PartOne::new),
+        entry("4-2", GiantSquid.PartTwo::new),
+        entry("5-1", HydrothermalVenture.PartOne::new),
+        entry("5-2", HydrothermalVenture.PartTwo::new),
+        entry("6-1", LanternfishSolver.PartOne::new),
+        entry("6-2", LanternfishSolver.PartTwo::new),
+        entry("7-1", TheTreacheryOfWhales.PartOne::new),
+        entry("7-2", TheTreacheryOfWhales.PartTwo::new)
     );
 
     public static void main(String[] args) {
-        if(args.length < 1) {
+        if (args.length < 1) {
             System.err.println("Please provide the advent day and part as the first argument, e.g. `1-1`. ");
             System.exit(1);
         }
