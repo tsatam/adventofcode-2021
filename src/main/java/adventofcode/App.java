@@ -7,6 +7,7 @@ import adventofcode.day4.GiantSquid;
 import adventofcode.day5.HydrothermalVenture;
 import adventofcode.day6.LanternfishSolver;
 import adventofcode.day7.TheTreacheryOfWhales;
+import adventofcode.day8.SevenSegmentSearch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,9 @@ public class App {
         entry("6-1", LanternfishSolver.PartOne::new),
         entry("6-2", LanternfishSolver.PartTwo::new),
         entry("7-1", TheTreacheryOfWhales.PartOne::new),
-        entry("7-2", TheTreacheryOfWhales.PartTwo::new)
+        entry("7-2", TheTreacheryOfWhales.PartTwo::new),
+        entry("8-1", SevenSegmentSearch.PartOne::new),
+        entry("8-2", SevenSegmentSearch.PartTwo::new)
     );
 
     public static void main(String[] args) {
