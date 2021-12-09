@@ -26,7 +26,7 @@ public abstract sealed class LanternfishSolver implements Solver {
         for(int day = 0; day < daysToSimulate(); day++) {
             var fishAt0 = fishAtDays[0];
 
-            System.arraycopy(fishAtDays, 1, fishAtDays, 0, fishAtDays.length);
+            System.arraycopy(fishAtDays, 1, fishAtDays, 0, fishAtDays.length - 1);
 
             fishAtDays[REPRODUCTION_TIME] = fishAtDays[REPRODUCTION_TIME].add(fishAt0);
             fishAtDays[DEFAULT_TIMER] = fishAt0;

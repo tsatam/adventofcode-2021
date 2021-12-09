@@ -38,7 +38,7 @@ days.each {day ->
             description = "Run the solution for Day ${day}, Part ${part}"
             classpath = sourceSets.main.runtimeClasspath
             mainClass = 'adventofcode.App'
-            args "${day}-${part}"
+            args = ["${day}", "${part}"]
             def inputFile = new File(projectDir, "inputs/day${day}.txt")
             standardInput = inputFile.exists() ? inputFile.newInputStream() : System.in
         }
