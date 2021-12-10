@@ -1,12 +1,15 @@
 package adventofcode.day10;
 
 import adventofcode.Solver;
+import adventofcode.annotations.Day;
+import adventofcode.annotations.Part;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 import java.util.stream.Stream;
 
+@Day(10)
 public abstract sealed class SyntaxScoring implements Solver {
     @Override
     public String solve(List<String> input) {
@@ -17,7 +20,7 @@ public abstract sealed class SyntaxScoring implements Solver {
 
     protected abstract Number getResult(List<String> input);
 
-
+    @Part(1)
     public static final class PartOne extends SyntaxScoring {
         @Override
         protected Number getResult(List<String> input) {
@@ -30,6 +33,7 @@ public abstract sealed class SyntaxScoring implements Solver {
         }
     }
 
+    @Part(2)
     public static final class PartTwo extends SyntaxScoring {
         @Override
         protected Number getResult(List<String> input) {

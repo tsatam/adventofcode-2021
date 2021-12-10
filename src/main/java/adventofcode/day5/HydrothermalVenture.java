@@ -1,10 +1,13 @@
 package adventofcode.day5;
 
 import adventofcode.Solver;
+import adventofcode.annotations.Day;
+import adventofcode.annotations.Part;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Day(5)
 public abstract sealed class HydrothermalVenture implements Solver {
     @Override
     public String solve(List<String> input) {
@@ -59,6 +62,7 @@ public abstract sealed class HydrothermalVenture implements Solver {
         }
     }
 
+    @Part(1)
     public static final class PartOne extends HydrothermalVenture {
         protected List<Line> linesToCheck(List<Line> allLines) {
             return allLines.stream()
@@ -70,6 +74,7 @@ public abstract sealed class HydrothermalVenture implements Solver {
         }
     }
 
+    @Part(2)
     public static final class PartTwo extends HydrothermalVenture {
         @Override
         protected List<Line> linesToCheck(List<Line> allLines) {

@@ -1,11 +1,14 @@
 package adventofcode.day9;
 
 import adventofcode.Solver;
+import adventofcode.annotations.Day;
+import adventofcode.annotations.Part;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+@Day(9)
 public abstract sealed class SmokeBasin implements Solver {
 
     @Override
@@ -40,6 +43,7 @@ public abstract sealed class SmokeBasin implements Solver {
             .toArray(int[][]::new);
     }
 
+    @Part(1)
     public static final class PartOne extends SmokeBasin {
         @Override
         protected int calculateResult(int[][] heightmap) {
@@ -59,6 +63,7 @@ public abstract sealed class SmokeBasin implements Solver {
         }
     }
 
+    @Part(2)
     public static final class PartTwo extends SmokeBasin {
         @Override
         protected int calculateResult(int[][] heightmap) {

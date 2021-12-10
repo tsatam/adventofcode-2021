@@ -1,10 +1,13 @@
 package adventofcode.day7;
 
 import adventofcode.Solver;
+import adventofcode.annotations.Day;
+import adventofcode.annotations.Part;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Day(7)
 public abstract sealed class TheTreacheryOfWhales implements Solver {
     @Override
     public String solve(List<String> input) {
@@ -37,6 +40,7 @@ public abstract sealed class TheTreacheryOfWhales implements Solver {
             .toArray();
     }
 
+    @Part(1)
     public static final class PartOne extends TheTreacheryOfWhales {
         protected int calculateFuelConsumption(int[] crabs, int positionToCheck) {
             return Arrays.stream(crabs)
@@ -46,6 +50,7 @@ public abstract sealed class TheTreacheryOfWhales implements Solver {
         }
     }
 
+    @Part(2)
     public static final class PartTwo extends TheTreacheryOfWhales {
         protected int calculateFuelConsumption(int[] crabs, int positionToCheck) {
             return Arrays.stream(crabs)

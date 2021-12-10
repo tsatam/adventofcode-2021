@@ -1,38 +1,21 @@
 package adventofcode.day8;
 
 import adventofcode.Solver;
+import adventofcode.annotations.Day;
+import adventofcode.annotations.Part;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+@Day(8)
 public abstract sealed class SevenSegmentSearch implements Solver {
     private static final int[] SEGMENT_LENGTHS = new int[]{
         6, 2, 5, 5, 4, 5, 6, 3, 7, 6
-    };//0  1  2  3  4  5  6  7  8  9
-    /*
+    };
 
-    for these segment names:
-
-     aaaa
-    b    c
-    b    c
-     dddd
-    e    f
-    e    f
-     gggg
-
-    number of occurrences in display 0-9:
-    a -> 8
-    b -> 6
-    c -> 8
-    d -> 7
-    e -> 4
-    f -> 9
-    g -> 7
-     */
-
+    @Part(1)
     public static final class PartOne extends SevenSegmentSearch {
 
         private static final List<Integer> LENGTHS_TO_CHECK = List.of(
@@ -59,6 +42,7 @@ public abstract sealed class SevenSegmentSearch implements Solver {
         }
     }
 
+    @Part(2)
     public static final class PartTwo extends SevenSegmentSearch {
         @Override
         public String solve(List<String> input) {

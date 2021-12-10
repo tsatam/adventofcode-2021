@@ -1,11 +1,14 @@
 package adventofcode.day4;
 
 import adventofcode.Solver;
+import adventofcode.annotations.Day;
+import adventofcode.annotations.Part;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+@Day(4)
 public abstract sealed class GiantSquid implements Solver {
     @Override
     public String solve(List<String> input) {
@@ -20,6 +23,7 @@ public abstract sealed class GiantSquid implements Solver {
 
     protected abstract int calculateWinningScore(int[] draws, List<Board> boards);
 
+    @Part(1)
     public static final class PartOne extends GiantSquid {
         @Override
         protected int calculateWinningScore(int[] draws, List<Board> boards) {
@@ -37,6 +41,7 @@ public abstract sealed class GiantSquid implements Solver {
         }
     }
 
+    @Part(2)
     public static final class PartTwo extends GiantSquid {
         @Override
         protected int calculateWinningScore(int[] draws, List<Board> boards) {

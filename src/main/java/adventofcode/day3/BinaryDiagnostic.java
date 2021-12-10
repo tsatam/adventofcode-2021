@@ -1,12 +1,15 @@
 package adventofcode.day3;
 
 import adventofcode.Solver;
+import adventofcode.annotations.Day;
+import adventofcode.annotations.Part;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.IntUnaryOperator;
 import java.util.stream.Collectors;
 
+@Day(3)
 public abstract sealed class BinaryDiagnostic implements Solver {
     private int bitSize = 0;
 
@@ -30,6 +33,7 @@ public abstract sealed class BinaryDiagnostic implements Solver {
         return bit ^ 1;
     }
 
+    @Part(1)
     public static final class PartOne extends BinaryDiagnostic {
         @Override
         protected int calculateRating(List<String> input) {
@@ -57,8 +61,8 @@ public abstract sealed class BinaryDiagnostic implements Solver {
         }
     }
 
+    @Part(2)
     public static final class PartTwo extends BinaryDiagnostic {
-
         @Override
         protected int calculateRating(List<String> input) {
 

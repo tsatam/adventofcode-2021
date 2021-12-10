@@ -7,12 +7,13 @@ repositories {
 }
 
 java {
-    toolchain{
+    toolchain {
         languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
 dependencies {
+    implementation('org.reflections:reflections:0.10.2')
     testImplementation("org.assertj:assertj-core:3.21.0")
 }
 
@@ -31,8 +32,8 @@ application {
 def days = 1..25;
 def parts = 1..2;
 
-days.each {day ->
-    parts.each {part ->
+days.each { day ->
+    parts.each { part ->
         tasks.register("aoc-${day.toString().padLeft(2, "0")}-${part}", JavaExec) {
             group = "Advent of Code"
             description = "Run the solution for Day ${day}, Part ${part}"

@@ -1,9 +1,12 @@
 package adventofcode.day2;
 
 import adventofcode.Solver;
+import adventofcode.annotations.Day;
+import adventofcode.annotations.Part;
 
 import java.util.List;
 
+@Day(2)
 public abstract sealed class Dive<P extends Position<P>> implements Solver {
     @Override
     public String solve(List<String> input) {
@@ -22,6 +25,7 @@ public abstract sealed class Dive<P extends Position<P>> implements Solver {
 
     protected abstract P startingPosition();
 
+    @Part(1)
     public static final class PartOne extends Dive<Position.PartOne> {
         @Override
         protected Position.PartOne startingPosition() {
@@ -29,6 +33,7 @@ public abstract sealed class Dive<P extends Position<P>> implements Solver {
         }
     }
 
+    @Part(2)
     public static final class PartTwo extends Dive<Position.PartTwo> {
         @Override
         protected Position.PartTwo startingPosition() {

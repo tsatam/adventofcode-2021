@@ -1,12 +1,14 @@
 package adventofcode.day1;
 
 import adventofcode.Solver;
+import adventofcode.annotations.Day;
+import adventofcode.annotations.Part;
 
 import java.util.List;
 import java.util.stream.IntStream;
 
+@Day(1)
 public abstract sealed class SonarSweep implements Solver {
-
     @Override
     public String solve(List<String> input) {
         var measurements = input.stream()
@@ -18,6 +20,7 @@ public abstract sealed class SonarSweep implements Solver {
 
     protected abstract long countMeasurements(int[] measurements);
 
+    @Part(1)
     public static final class PartOne extends SonarSweep {
         @Override
         protected long countMeasurements(int[] measurements) {
@@ -25,6 +28,7 @@ public abstract sealed class SonarSweep implements Solver {
         }
     }
 
+    @Part(2)
     public static final class PartTwo extends SonarSweep {
         @Override
         protected long countMeasurements(int[] measurements) {

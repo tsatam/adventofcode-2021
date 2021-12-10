@@ -1,11 +1,14 @@
 package adventofcode.day6;
 
 import adventofcode.Solver;
+import adventofcode.annotations.Day;
+import adventofcode.annotations.Part;
 
 import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 
+@Day(6)
 public abstract sealed class LanternfishSolver implements Solver {
     private static final int REPRODUCTION_TIME = 6;
     private static final int DEFAULT_TIMER = 8;
@@ -44,6 +47,7 @@ public abstract sealed class LanternfishSolver implements Solver {
 
     protected abstract int daysToSimulate();
 
+    @Part(1)
     public static final class PartOne extends LanternfishSolver {
         @Override
         protected int daysToSimulate() {
@@ -51,6 +55,7 @@ public abstract sealed class LanternfishSolver implements Solver {
         }
     }
 
+    @Part(2)
     public static final class PartTwo extends LanternfishSolver {
         @Override
         protected int daysToSimulate() {
