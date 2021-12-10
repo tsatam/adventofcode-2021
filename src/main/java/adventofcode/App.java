@@ -1,6 +1,7 @@
 package adventofcode;
 
 import adventofcode.day1.SonarSweep;
+import adventofcode.day10.SyntaxScoring;
 import adventofcode.day2.Dive;
 import adventofcode.day3.BinaryDiagnostic;
 import adventofcode.day4.GiantSquid;
@@ -39,10 +40,12 @@ public class App {
         entry("8-1", SevenSegmentSearch.PartOne::new),
         entry("8-2", SevenSegmentSearch.PartTwo::new),
         entry("9-1", SmokeBasin.PartOne::new),
-        entry("9-2", SmokeBasin.PartTwo::new)
+        entry("9-2", SmokeBasin.PartTwo::new),
+        entry("10-1", SyntaxScoring.PartOne::new),
+        entry("10-2", SyntaxScoring.PartTwo::new)
     );
 
-    public static void main(String[] args) throws ReflectiveOperationException {
+    public static void main(String[] args) {
         if (args.length < 2) {
             System.err.println(Arrays.toString(args));
             System.err.println("Please provide the advent day and part as the first two arguments, e.g. `1 1`. ");
