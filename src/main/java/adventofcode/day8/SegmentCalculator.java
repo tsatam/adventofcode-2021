@@ -3,12 +3,7 @@ package adventofcode.day8;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
-public class SegmentCalculator {
-    private final Display display;
-
-    public SegmentCalculator(Display display) {
-        this.display = display;
-    }
+public record SegmentCalculator(Display display) {
 
     private String[] inputs() {
         return display.inputs();
