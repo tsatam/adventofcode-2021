@@ -73,6 +73,4 @@ class PartOneTest {
         var result = subject.solve(input);
         assertThat(result).isEqualTo("17");
     }
-
-
 }
