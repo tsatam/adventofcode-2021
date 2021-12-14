@@ -7,8 +7,8 @@ import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-class PartOneTest {
-    private final Solver subject = new ExtendedPolymerization.PartOne();
+class PartTwoTest {
+    private final Solver subject = new ExtendedPolymerization.PartTwo();
 
     @Test
     void emptyInput_returns0() {
@@ -73,6 +73,6 @@ class PartOneTest {
             "CN -> C"
         );
         var result = subject.solve(input);
-        assertThat(result).isEqualTo("1588" /*10^2 + 1*/);
+        assertThat(result).isEqualTo("2188189693529");
     }
 }
