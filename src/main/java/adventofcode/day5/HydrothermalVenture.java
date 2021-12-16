@@ -3,6 +3,7 @@ package adventofcode.day5;
 import adventofcode.Solver;
 import adventofcode.annotations.Day;
 import adventofcode.annotations.Part;
+import adventofcode.common.Point;
 
 import java.util.Arrays;
 import java.util.List;

@@ -28,9 +28,14 @@ public record Board(int[][] points) {
 
     public int sum() {
         AtomicInteger sum = new AtomicInteger();
-        Point.forPointRange(size(), point -> {
-            sum.addAndGet(at(point));
-        });
+        Point.forPointRange(size(), point -> sum.addAndGet(at(point)));
         return sum.get();
+    }
+
+    public boolean inBounds(Point point) {
+        return point.y() >= 0
+               && point.x() >= 0
+               && point.y() < points.length
+               && point.x() < points[point.y()].length;
     }
 }

@@ -20,4 +20,33 @@ public record Point(int x, int y) {
             }
         }
     }
+
+    public Point translate(int byX, int byY) {
+        return new Point(x + byX, y + byY);
+    }
+
+    public Point north() {
+        return translate(0, -1);
+    }
+    public Point northEast() {
+        return translate(1, -1);
+    }
+    public Point east() {
+        return translate(1, 0);
+    }
+    public Point southEast() {
+        return translate(1, 1);
+    }
+    public Point south() {
+        return translate(0, 1);
+    }
+    public Point southWest() {
+        return translate(-1, 1);
+    }
+    public Point west() {
+        return translate(-1, 0);
+    }
+    public Point northWest() {
+        return translate(-1, -1);
+    }
 }

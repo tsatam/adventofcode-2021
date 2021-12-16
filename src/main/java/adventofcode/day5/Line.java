@@ -1,5 +1,7 @@
 package adventofcode.day5;
 
+import adventofcode.common.Point;
+
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 

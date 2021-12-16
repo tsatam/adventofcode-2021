@@ -3,6 +3,7 @@ package adventofcode.day11;
 import adventofcode.Solver;
 import adventofcode.annotations.Day;
 import adventofcode.annotations.Part;
+import adventofcode.common.Point;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -110,41 +111,6 @@ public abstract sealed class DumboOctopus implements Solver {
                     point.y() >= 0 &&
                     point.y() < grid.length &&
                     point.x() < grid[point.y()].length;
-        }
-    }
-
-
-    record Point(int x, int y) {
-        public Point north() {
-            return new Point(x, y - 1);
-        }
-
-        public Point northEast() {
-            return new Point(x + 1, y - 1);
-        }
-
-        public Point east() {
-            return new Point(x + 1, y);
-        }
-
-        public Point southEast() {
-            return new Point(x + 1, y + 1);
-        }
-
-        public Point south() {
-            return new Point(x, y + 1);
-        }
-
-        public Point southWest() {
-            return new Point(x - 1, y + 1);
-        }
-
-        public Point west() {
-            return new Point(x - 1, y);
-        }
-
-        public Point northWest() {
-            return new Point(x - 1, y - 1);
         }
     }
 }
