@@ -21,4 +21,9 @@ public record BoundingBox(Point min, Point max) {
 
         return new BoundingBox(new Point(minX.x(), minY.y()), new Point(maxX.x(), maxY.y()));
     }
+
+    public boolean inBounds(Point point) {
+        return (min.x() <= point.x() && point.x() <= max.x())
+            && (min.y() <= point.y() && point.y() <= max.y());
+    }
 }

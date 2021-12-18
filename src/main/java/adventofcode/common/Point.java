@@ -21,6 +21,10 @@ public record Point(int x, int y) {
         }
     }
 
+    public Point translate(Point velocity) {
+        return translate(velocity.x(), velocity.y());
+    }
+
     public Point translate(int byX, int byY) {
         return new Point(x + byX, y + byY);
     }
